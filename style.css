@@ -1,0 +1,245 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* font-size */
+  font-size: 62.5%;
+  --fs-body: 1.6rem;
+  --fs-h1: 12.6rem;
+
+  /* background */
+  --bg-main: #ffffff;
+  --bg-music-buttons: #e1e1e6;
+
+  /* colors */
+  --color-items: #323238;
+
+  --bg-forest: rgb(15, 116, 15);  
+  --bg-rain: #02799d;
+  --bg-coffee: rgb(112, 16, 112);
+  --bg-campfire: rgb(96, 0, 0);
+}
+
+main.main-dark {
+  --bg-main: #000000;
+  --bg-music-buttons: #29292E;
+
+  --color-items: #C4C4CC;
+  --color-h1-inputs: #FFFFFF;
+
+  --bg-forest: rgb(12, 81, 12);
+  --bg-rain: #0A3442;
+  --bg-coffee: rgb(76, 11, 76);
+  --bg-campfire: rgb(59, 4, 4);  
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: var(--fs-body);
+}
+
+.hide {
+  display: none;
+}
+
+.path {
+  fill: var(--color-items)
+}
+
+button {
+  border: none;
+  background: none;
+  color: var(--color-items);
+  cursor: pointer;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+main {
+  display: grid;
+  height: 100vh;
+  background: var(--bg-main)
+}
+
+.mode {
+  display: flex;
+  right: 6rem;
+  top: 6rem;
+  position: absolute;
+  cursor: pointer;
+}
+
+main .container {
+  max-width: 82.1rem;
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  gap: 19.2rem;
+}
+
+main .container .timer {
+  justify-self: center;
+  align-self: center;
+}
+
+main .container h1 {
+  display: flex;
+  font-weight: 500;
+  font-size: var(--fs-h1);
+  line-height: 14.8rem;
+  color: var(--color-items);
+  text-transform: uppercase;
+  justify-content: center;
+  align-content: center;
+}
+
+.controls {
+  display: flex;
+  gap: 4rem;
+  margin-top: 1.7rem;
+}
+
+.musics {
+  display: grid;
+  gap: 3.2rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.musics button {
+  border-radius: 24px;
+  width: 13.8rem;
+  height: 15.2rem;
+}
+
+.bg-button {
+  background: var(--bg-music-buttons);
+}
+
+.forest {
+  background-color: var(--bg-forest);
+}
+.rain {
+  background-color: var(--bg-rain);
+}
+.coffee {
+  background-color: var(--bg-coffee);
+}
+.campfire {
+  background-color: var(--bg-campfire);
+}
+
+/* @mediaqueries */
+@media (max-width: 450px) {
+  .mode {
+    display: flex;
+    right: 0;
+    top: 0;
+    position: absolute;
+    cursor: pointer;
+  }
+  
+}
+
+/* inputs */ 
+/*inputs normal */
+.volumeInput {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 90px;
+  height: 4px;
+  margin-top: 3.2rem;
+  cursor: pointer;
+}
+/*trilho*/
+.volumeInput::-webkit-slider-runnable-track {
+  width: 90px;
+  height: 4px;
+  background: var(--color-items);
+  border-radius: 5px;
+}
+/*slider*/
+.volumeInput::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1.6rem;
+  height: 1.6rem; 
+  margin-top: -6px;
+  border-radius: 6rem;
+  background: var(--color-items);
+}
+/*inputs quando clicado */
+/*trilho*/
+.volumeInputClick::-webkit-slider-runnable-track {
+  background: var(--bg-main);
+}
+
+/*slider*/
+.volumeInputClick::-webkit-slider-thumb {
+  background: var(--bg-main);
+}
+
+/* DARK THEME */
+main.main-dark .container h1 {
+  color: var(--color-h1-inputs);
+}
+
+/*inputs normal */
+main.main-dark .musics .volumeInput {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 90px;
+  height: 4px;
+  margin-top: 3.2rem;
+  cursor: pointer;
+}
+/*trilho*/
+main.main-dark .musics .volumeInput::-webkit-slider-runnable-track {
+  width: 90px;
+  height: 4px;
+  background: var(--color-h1-inputs);
+  border-radius: 5px;
+}
+/*slider*/
+main.main-dark .musics .volumeInput::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1.6rem;
+  height: 1.6rem; 
+  margin-top: -6px;
+  border-radius: 6rem;
+  background: var(--color-h1-inputs);
+}
+
+@media (max-width: 830px) {
+  main .container h1 {
+    font-size: 10rem;
+    line-height: 12rem;
+  }
+
+  main .container {
+    padding: 2rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  .musics button {
+    border-radius: 24px;
+    width: 10.8rem;
+    height: 12.2rem;
+  }
+
+  .container .timer svg {
+    width: 4.8rem;
+    height: 4.8rem;
+  }
+
+  .controls {
+    margin-top: 0;
+  }
+}
